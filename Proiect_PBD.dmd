@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="Proiect_PBD" id="F5466BE1-701A-1571-D5BD-A5F204B1623D" version="3.5">
+<createdBy>ecate</createdBy>
+<createdTime>2022-05-01 10:23:08 UTC</createdTime>
+<ownerDesignName>Proiect_PBD</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>F5466BE1-701A-1571-D5BD-A5F204B1623D</designId>
+</OSDM_Design>

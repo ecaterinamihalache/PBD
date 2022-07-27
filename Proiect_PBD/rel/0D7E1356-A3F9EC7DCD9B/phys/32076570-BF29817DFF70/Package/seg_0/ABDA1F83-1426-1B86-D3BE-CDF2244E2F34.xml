@@ -1,0 +1,65 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<PackageOracle class="oracle.dbtools.crest.model.design.storage.oracle.PackageOracle" name="Package_update" directorySegmentName="seg_0" id="ABDA1F83-1426-1B86-D3BE-CDF2244E2F34">
+<createdBy>ecate</createdBy>
+<createdTime>2022-06-01 18:40:23 UTC</createdTime>
+<ownerDesignName>Proiect_PBD</ownerDesignName>
+<source>CREATE OR REPLACE PACKAGE Package_update AS 
+    v_apartinator_id pacienti.apartinator%TYPE;
+    v_id_pacient detalii_pacienti.id_detaliu%TYPE;
+    
+    PROCEDURE update_nume_pacient
+        (v_nume	IN	VARCHAR2,
+         v_prenume	IN	VARCHAR2,
+         v_nume_nou IN VARCHAR2)
+    IS
+        e_update_nume_nou EXCEPTION; 
+        pragma exception_init(e_update_nume_nou, -20010);
+    BEGIN
+        IF v_nume_nou IS NULL THEN
+            RAISE e_update_nume_nou;
+        END IF;
+        UPDATE pacienti SET nume=v_nume_nou WHERE nume=v_nume AND prenume=v_prenume;
+    EXCEPTION
+        WHEN e_update_nume_nou THEN
+            dbms_output.put_line(&apos;Nu s-a respectat constrangerea bazei de date! Campul nume trebuie sa fie diferit de null!&apos;);
+        WHEN OTHERS THEN
+            dbms_output.put_line(&apos;S-au mai produs alte erori la modificarea numelui unui pacient.&apos;);
+    END update_nume_pacient;
+    
+    PROCEDURE update_apartinator_pacient
+        (v_nume	IN	VARCHAR2,
+         v_prenume	IN	VARCHAR2,
+         v_nume2	IN	VARCHAR2,
+         v_prenume2	IN	VARCHAR2) IS
+    BEGIN
+        SELECT id_pacient INTO v_apartinator_id FROM pacienti WHERE nume=v_nume2 AND prenume=v_prenume2;--nume si prenume copil -&gt; imi iau id-ul sau
+        --dbms_output.put_line(&apos;aici: &apos; || v_apartinator_id);
+        UPDATE pacienti SET apartinator = v_apartinator_id WHERE nume=v_nume AND prenume=v_prenume; --fac update la mama si ii trec la apartinator id-ul copilului
+    END update_apartinator_pacient;
+    
+    PROCEDURE update_detalii_pacient_telefon
+        (v_nume	IN	VARCHAR2,
+         v_prenume	IN	VARCHAR2,
+         v_telefon	IN	VARCHAR2) IS
+    BEGIN
+        SELECT id_pacient INTO v_id_pacient FROM pacienti WHERE nume=v_nume AND prenume=v_prenume;
+        UPDATE detalii_pacienti SET telefon=v_telefon WHERE pacienti_id_pacient=v_id_pacient;
+    END update_detalii_pacient_telefon;
+    
+    PROCEDURE update_detalii_pacient_email
+        (v_nume	IN	VARCHAR2,
+         v_prenume	IN	VARCHAR2,
+         v_email	IN	VARCHAR2) IS
+    BEGIN
+        SELECT id_pacient INTO v_id_pacient FROM pacienti WHERE nume=v_nume AND prenume=v_prenume;
+        UPDATE detalii_pacienti SET email=v_email WHERE pacienti_id_pacient=v_id_pacient;
+    END update_detalii_pacient_email;
+    
+    PROCEDURE update_detalii_analize_valabilitate
+        (v_nume_analiza	IN	VARCHAR2,
+         v_valabilitate	IN	NUMBER) IS
+    BEGIN
+        UPDATE detalii_analize SET valabilitate=v_valabilitate WHERE nume_analiza=v_nume_analiza;
+    END update_detalii_analize_valabilitate;
+END;</source>
+</PackageOracle>

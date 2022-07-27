@@ -1,0 +1,78 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="63C6BD78-09EF-EEC3-A58D-2F74A206BAC6" name="pacienti_analize_fk">
+<createdBy>ecate</createdBy>
+<createdTime>2022-05-01 12:53:16 UTC</createdTime>
+<ownerDesignName>Proiect_PBD</ownerDesignName>
+<ordsAlias>pac_an_fk</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="pacienti_id_pacient" id="6416EC2F-00BF-5FB9-3069-371E6476FA1D">
+<createdBy>ecate</createdBy>
+<createdTime>2022-05-01 12:53:16 UTC</createdTime>
+<ownerDesignName>Proiect_PBD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="625FAB87-545A-5882-46FD-2C029E646F6C" referredColumn="87B994B6-7D49-80C4-DE2F-5B54970B1A70"/>
+</associations>
+</Column>
+<Column name="analize_id_analiza" id="E339B4E2-8531-3BC4-4FD5-B7496754C23C">
+<createdBy>ecate</createdBy>
+<createdTime>2022-05-01 12:53:16 UTC</createdTime>
+<ownerDesignName>Proiect_PBD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="4CCD77D4-4C2E-F4E4-927F-8D6A3F03442C" referredColumn="94C5DA67-245B-80E7-366B-BB11AC89E73B"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="3854584B-0DB4-910C-90C2-BF897AD60F10" name="pacienti_analize_fk_PK">
+<createdBy>ecate</createdBy>
+<createdTime>2022-05-01 12:53:16 UTC</createdTime>
+<ownerDesignName>Proiect_PBD</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6416EC2F-00BF-5FB9-3069-371E6476FA1D"/>
+<colUsage columnID="E339B4E2-8531-3BC4-4FD5-B7496754C23C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="3DF3D731-A247-D213-53AA-1E9976A8FC76" name="pacienti_analize_fk_pacienti">
+<createdBy>ecate</createdBy>
+<createdTime>2022-05-01 12:53:16 UTC</createdTime>
+<generatorID>0D21C32B-8E5C-2D5F-BCC2-0B44F415825D</generatorID>
+<ownerDesignName>Proiect_PBD</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6416EC2F-00BF-5FB9-3069-371E6476FA1D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="CEB25A34-D6C9-643E-EAC0-BCC3A6F1DB0F" name="pacienti_analize_fk_analize">
+<createdBy>ecate</createdBy>
+<createdTime>2022-05-01 12:53:16 UTC</createdTime>
+<generatorID>0D21C32B-8E5C-2D5F-BCC2-0B44F415825D</generatorID>
+<ownerDesignName>Proiect_PBD</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E339B4E2-8531-3BC4-4FD5-B7496754C23C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

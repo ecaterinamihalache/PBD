@@ -1,0 +1,84 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="A1E04530-87E4-3AB3-42C7-94230AA9D0EB" name="pacienti">
+<createdBy>ecate</createdBy>
+<createdTime>2022-05-01 12:53:16 UTC</createdTime>
+<generatorID>C001041A-46CF-E342-14D8-CAEC40B27CBA</generatorID>
+<ownerDesignName>Proiect_PBD</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_pacient" id="87B994B6-7D49-80C4-DE2F-5B54970B1A70">
+<createdBy>ecate</createdBy>
+<createdTime>2022-05-01 12:53:16 UTC</createdTime>
+<generatorID>77D1AC35-A35D-81F5-A3C7-F2AF386F4603</generatorID>
+<ownerDesignName>Proiect_PBD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<ownDataTypeParameters>,3,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nume" id="D851C03C-49A8-F63A-D5CE-A8DC88B08729">
+<createdBy>ecate</createdBy>
+<createdTime>2022-05-01 12:53:16 UTC</createdTime>
+<generatorID>DC2432BE-75A7-25F9-2DE0-B1A4886D9323</generatorID>
+<ownerDesignName>Proiect_PBD</ownerDesignName>
+<constraintName>nume_ck</constraintName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<checkConstraint>
+<implementationDef dbType="Generic Constraint" definition="length(nume)&gt;1"/>
+</checkConstraint>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="prenume" id="8162756A-BA13-BF2C-A9DF-BE224B795C0E">
+<createdBy>ecate</createdBy>
+<createdTime>2022-05-01 12:53:16 UTC</createdTime>
+<generatorID>3A5857B5-7D7F-307C-48F3-30EE02FBBBDA</generatorID>
+<ownerDesignName>Proiect_PBD</ownerDesignName>
+<constraintName>prenume_ck</constraintName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<checkConstraint>
+<implementationDef dbType="Generic Constraint" definition="length(prenume)&gt;1"/>
+</checkConstraint>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="apartinator" id="FEBDD33F-3D67-4E54-8BCF-F47BCA64CA19">
+<createdBy>ecate</createdBy>
+<createdTime>2022-05-12 09:22:10 UTC</createdTime>
+<generatorID>468EACA4-F2EB-D9F4-4392-35EBA10A7F11</generatorID>
+<ownerDesignName>Proiect_PBD</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<ownDataTypeParameters>,3,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="2C55C8D4-48E2-37B6-F93D-FE1851DD7D44" name="pacienti_PK">
+<createdBy>ecate</createdBy>
+<createdTime>2022-05-01 12:53:16 UTC</createdTime>
+<generatorID>F51709AC-9299-D719-7A6E-10E5BB52606D</generatorID>
+<ownerDesignName>Proiect_PBD</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="87B994B6-7D49-80C4-DE2F-5B54970B1A70"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

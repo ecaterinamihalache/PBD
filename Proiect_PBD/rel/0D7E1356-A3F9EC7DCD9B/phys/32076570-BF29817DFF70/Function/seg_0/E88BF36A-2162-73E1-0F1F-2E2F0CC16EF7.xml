@@ -1,0 +1,14 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FunctionOracle class="oracle.dbtools.crest.model.design.storage.oracle.FunctionOracle" name="validare_date" directorySegmentName="seg_0" id="E88BF36A-2162-73E1-0F1F-2E2F0CC16EF7">
+<createdBy>ecate</createdBy>
+<createdTime>2022-06-01 18:24:09 UTC</createdTime>
+<ownerDesignName>Proiect_PBD</ownerDesignName>
+<source>CREATE OR REPLACE FUNCTION validare_date(v_data_recoltarii DATE, v_data_rezultatului DATE) RETURN BOOLEAN  AS 
+BEGIN
+ IF v_data_recoltarii &gt; v_data_rezultatului THEN
+        RETURN TRUE;
+    ELSE
+        RETURN FALSE;
+    END IF;
+END;</source>
+</FunctionOracle>

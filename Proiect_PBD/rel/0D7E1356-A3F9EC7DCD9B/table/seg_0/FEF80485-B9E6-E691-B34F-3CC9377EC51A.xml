@@ -1,0 +1,71 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="FEF80485-B9E6-E691-B34F-3CC9377EC51A" name="asistente">
+<createdBy>ecate</createdBy>
+<createdTime>2022-05-01 12:53:16 UTC</createdTime>
+<generatorID>BD9AB9B0-C4C5-9776-A885-49CB7A5DCDE3</generatorID>
+<ownerDesignName>Proiect_PBD</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_asistenta" id="2F4C5101-8566-C0CC-5726-1F78F53113CD">
+<createdBy>ecate</createdBy>
+<createdTime>2022-05-01 12:53:16 UTC</createdTime>
+<generatorID>948F5157-C4A8-D4AB-70FD-C048FCD7D89E</generatorID>
+<ownerDesignName>Proiect_PBD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<ownDataTypeParameters>,3,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nume" id="6AEA5237-5773-0446-D82E-32EC5A8B0C2E">
+<createdBy>ecate</createdBy>
+<createdTime>2022-05-01 12:53:16 UTC</createdTime>
+<generatorID>5FF60F0E-9C36-29EC-A64D-150DA62292D7</generatorID>
+<ownerDesignName>Proiect_PBD</ownerDesignName>
+<constraintName>numeA_ck</constraintName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<checkConstraint>
+<implementationDef dbType="Generic Constraint" definition="length(nume)&gt;1"/>
+</checkConstraint>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="prenume" id="EC7D8438-D13D-5637-2C40-E7F7F599518D">
+<createdBy>ecate</createdBy>
+<createdTime>2022-05-01 12:53:16 UTC</createdTime>
+<generatorID>AFAAE7C3-4603-C7A0-7CF0-6591136FA18D</generatorID>
+<ownerDesignName>Proiect_PBD</ownerDesignName>
+<constraintName>prenumeA_ck</constraintName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<checkConstraint>
+<implementationDef dbType="Generic Constraint" definition="length(prenume)&gt;1"/>
+</checkConstraint>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="D3248C9F-8BD6-D181-B2F5-F4AF7BB07615" name="asistente_PK">
+<createdBy>ecate</createdBy>
+<createdTime>2022-05-01 12:53:16 UTC</createdTime>
+<generatorID>DB05F643-3927-B5D4-2CA7-F2E39E60B9F6</generatorID>
+<ownerDesignName>Proiect_PBD</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2F4C5101-8566-C0CC-5726-1F78F53113CD"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

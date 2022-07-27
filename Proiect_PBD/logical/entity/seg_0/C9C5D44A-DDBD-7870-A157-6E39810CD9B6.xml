@@ -1,0 +1,94 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="C9C5D44A-DDBD-7870-A157-6E39810CD9B6" name="medici">
+<createdBy>ecate</createdBy>
+<createdTime>2022-05-01 10:43:36 UTC</createdTime>
+<ownerDesignName>Proiect_PBD</ownerDesignName>
+<engineerTo>
+<item key="0D7E1356-8AAB-5162-BE78-A3F9EC7DCD9B" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id_medic" id="C9F02ABD-7F45-0B8F-CBC7-D46718FE9A56">
+<createdBy>ecate</createdBy>
+<createdTime>2022-05-01 10:49:42 UTC</createdTime>
+<ownerDesignName>Proiect_PBD</ownerDesignName>
+<engineerTo>
+<item key="0D7E1356-8AAB-5162-BE78-A3F9EC7DCD9B" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<ownDataTypeParameters>,3,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nume" id="5442F2B7-9DF1-A672-79D8-3284D2F5AF01">
+<createdBy>ecate</createdBy>
+<createdTime>2022-05-01 10:50:01 UTC</createdTime>
+<ownerDesignName>Proiect_PBD</ownerDesignName>
+<engineerTo>
+<item key="0D7E1356-8AAB-5162-BE78-A3F9EC7DCD9B" value="true"/>
+</engineerTo>
+<constraintName>numeM_ck</constraintName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<checkConstraint>
+<implementationDef dbType="Generic Constraint" definition="length(nume)&gt;1"/>
+</checkConstraint>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="prenume" id="B3150BD9-0990-C0F7-B0DF-1BCBD8048146">
+<createdBy>ecate</createdBy>
+<createdTime>2022-05-01 10:50:29 UTC</createdTime>
+<ownerDesignName>Proiect_PBD</ownerDesignName>
+<engineerTo>
+<item key="0D7E1356-8AAB-5162-BE78-A3F9EC7DCD9B" value="true"/>
+</engineerTo>
+<constraintName>prenumeM_ck</constraintName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<checkConstraint>
+<implementationDef dbType="Generic Constraint" definition="length(prenume)&gt;1"/>
+</checkConstraint>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="cod_parafa" id="9155400B-9C59-2F4A-789B-6766614484BF">
+<createdBy>ecate</createdBy>
+<createdTime>2022-05-01 12:26:33 UTC</createdTime>
+<ownerDesignName>Proiect_PBD</ownerDesignName>
+<engineerTo>
+<item key="0D7E1356-8AAB-5162-BE78-A3F9EC7DCD9B" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>6</dataTypeSize>
+<ownDataTypeParameters>6,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="047ABFA1-9798-3EB2-2738-29B39BC6DE8F" name="medici PK">
+<createdBy>ecate</createdBy>
+<createdTime>2022-05-01 10:49:59 UTC</createdTime>
+<ownerDesignName>Proiect_PBD</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="0D7E1356-8AAB-5162-BE78-A3F9EC7DCD9B" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>C9F02ABD-7F45-0B8F-CBC7-D46718FE9A56</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

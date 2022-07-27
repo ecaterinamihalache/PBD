@@ -1,0 +1,29 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TriggerOraclev10g class="oracle.dbtools.crest.model.design.storage.oracle.v10g.TriggerOraclev10g" name="Trg_before_update_phone_pacient" directorySegmentName="seg_0" id="A5C95435-0278-E89D-9EB9-2BB07BC3B040">
+<createdBy>ecate</createdBy>
+<createdTime>2022-06-01 18:29:10 UTC</createdTime>
+<ownerDesignName>Proiect_PBD</ownerDesignName>
+<actions>UPDATE</actions>
+<body><![CDATA[DECLARE 
+    CURSOR c1 IS 
+    SELECT pacienti_id_pacient FROM detalii_pacienti WHERE telefon=detalii_pacienti.telefon;
+    
+    CURSOR c2 IS
+    SELECT * FROM pacienti;
+BEGIN
+    IF UPDATING THEN
+        FOR val IN c1 LOOP
+            FOR v IN c2 LOOP
+                IF val.pacienti_id_pacient = v.apartinator THEN
+                    UPDATE pacienti SET apartinator=NULL
+                    WHERE apartinator = val.pacienti_id_pacient;
+                END IF;
+            END LOOP;
+        END LOOP;
+    END IF;
+END]]></body>
+<triggerTime>BEFORE</triggerTime>
+<columns>8C83B6CB-DFC3-E418-5A2C-01349B7717BC</columns>
+<scope>FOR EACH STATEMENT</scope>
+<table>F9F3D124-B03A-67E9-8992-B464F05F8E3B</table>
+</TriggerOraclev10g>

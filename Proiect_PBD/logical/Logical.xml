@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<LogicalDesign class="oracle.dbtools.crest.model.design.logical.LogicalDesign" name="Logical" id="ECFAA497-2312-C0F8-D938-733C6E7588F0" mainViewID="30236235-BA71-06B3-AD7F-3A6FE29C2571">
+<createdBy>ecate</createdBy>
+<createdTime>2022-05-01 10:23:08 UTC</createdTime>
+<ownerDesignName>Proiect_PBD</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+</LogicalDesign>

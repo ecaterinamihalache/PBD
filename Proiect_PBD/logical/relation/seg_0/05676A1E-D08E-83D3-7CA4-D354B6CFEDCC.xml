@@ -1,0 +1,21 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="pacienti_detalii_fk" directorySegmentName="seg_0" id="05676A1E-D08E-83D3-7CA4-D354B6CFEDCC">
+<createdBy>ecate</createdBy>
+<createdTime>2022-05-01 10:40:02 UTC</createdTime>
+<ownerDesignName>Proiect_PBD</ownerDesignName>
+<engineerTo>
+<item key="0D7E1356-8AAB-5162-BE78-A3F9EC7DCD9B" value="true"/>
+</engineerTo>
+<sourcePk>F51709AC-9299-D719-7A6E-10E5BB52606D</sourcePk>
+<identifying>false</identifying>
+<nameOnSource>au</nameOnSource>
+<nameOnTarget>sunt ale</nameOnTarget>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>C001041A-46CF-E342-14D8-CAEC40B27CBA</sourceEntity>
+<targetCardinalityString>1</targetCardinalityString>
+<targetEntity>69B676E2-CE14-702E-343D-97008CDF900C</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

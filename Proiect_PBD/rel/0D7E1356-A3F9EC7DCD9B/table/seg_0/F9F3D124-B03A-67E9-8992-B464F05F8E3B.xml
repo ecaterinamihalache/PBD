@@ -1,0 +1,162 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="F9F3D124-B03A-67E9-8992-B464F05F8E3B" name="detalii_pacienti">
+<createdBy>ecate</createdBy>
+<createdTime>2022-05-01 12:53:16 UTC</createdTime>
+<generatorID>69B676E2-CE14-702E-343D-97008CDF900C</generatorID>
+<ownerDesignName>Proiect_PBD</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_detaliu" id="6ABB7E29-0477-62EA-3D15-98127B8C059B">
+<createdBy>ecate</createdBy>
+<createdTime>2022-05-01 12:53:16 UTC</createdTime>
+<generatorID>0595E25F-9E8C-7408-5609-F467C1EB971E</generatorID>
+<ownerDesignName>Proiect_PBD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<ownDataTypeParameters>,3,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="data_nasterii" id="1ED97B9D-4DC3-0D9C-76C2-66269010AC15">
+<createdBy>ecate</createdBy>
+<createdTime>2022-05-01 12:53:16 UTC</createdTime>
+<generatorID>DBD42DB3-6C08-AC4A-ACE7-0A2C44E5FB43</generatorID>
+<ownerDesignName>Proiect_PBD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CNP" id="ACE658B5-00A5-524C-5EF5-41C1CF341CEB">
+<createdBy>ecate</createdBy>
+<createdTime>2022-05-01 12:53:16 UTC</createdTime>
+<generatorID>6278E729-016D-435A-84E6-5A4A447A4960</generatorID>
+<ownerDesignName>Proiect_PBD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>13</dataTypePrecision>
+<ownDataTypeParameters>,13,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="gen" id="910DEB6F-3F7E-B9C2-9349-E11F03F1671B">
+<createdBy>ecate</createdBy>
+<createdTime>2022-05-01 12:53:16 UTC</createdTime>
+<generatorID>C387A5C2-B4F8-FA48-5E6F-2357B1D19CCF</generatorID>
+<ownerDesignName>Proiect_PBD</ownerDesignName>
+<constraintName>gen_ck</constraintName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<listOfValues>
+<valueDef value="F" description=""/>
+<valueDef value="M" description=""/>
+</listOfValues>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="telefon" id="8C83B6CB-DFC3-E418-5A2C-01349B7717BC">
+<createdBy>ecate</createdBy>
+<createdTime>2022-05-01 12:53:16 UTC</createdTime>
+<generatorID>CCCEFCEC-DB1D-0E88-6456-DCF9C8C2850F</generatorID>
+<ownerDesignName>Proiect_PBD</ownerDesignName>
+<constraintName>telefon_ck</constraintName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<checkConstraint>
+<implementationDef dbType="Generic Constraint" definition="regexp_like(telefon, &apos;[0-9]{10}&apos;)"/>
+</checkConstraint>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="email" id="44AF49E5-79C0-E622-D72C-C63564AF8D32">
+<createdBy>ecate</createdBy>
+<createdTime>2022-05-01 12:53:16 UTC</createdTime>
+<generatorID>0F39A95B-883A-778B-436C-F83466F34636</generatorID>
+<ownerDesignName>Proiect_PBD</ownerDesignName>
+<constraintName>email_ck</constraintName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>40</dataTypeSize>
+<checkConstraint>
+<implementationDef dbType="Generic Constraint" definition="regexp_like(email, &apos;[a-z0-9._%-]+@[a-z0-9._%-]+\.[a-z]{2,4}&apos;)"/>
+</checkConstraint>
+<ownDataTypeParameters>40,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="pacienti_id_pacient" id="662E6272-F6F1-45C9-374C-A35165971176">
+<createdBy>ecate</createdBy>
+<createdTime>2022-05-01 12:53:16 UTC</createdTime>
+<generatorID>93685C00-3FBC-BDB5-2274-D454B74686BE</generatorID>
+<ownerDesignName>Proiect_PBD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="DBA4AD97-789F-B04E-7F09-8191B64C03A4" referredColumn="87B994B6-7D49-80C4-DE2F-5B54970B1A70"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="FC5FEB07-1BD2-36DB-6281-7886432578B0" name="detalii_pacienti_PK">
+<createdBy>ecate</createdBy>
+<createdTime>2022-05-01 12:53:16 UTC</createdTime>
+<generatorID>9494D1EF-02B1-E8F5-59C0-8A024D55546A</generatorID>
+<ownerDesignName>Proiect_PBD</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6ABB7E29-0477-62EA-3D15-98127B8C059B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F8FE984A-BA94-BD67-38C9-44BF717ABAC5" name="detalii_pacienti_CNP_UN">
+<createdBy>ecate</createdBy>
+<createdTime>2022-05-01 12:53:16 UTC</createdTime>
+<generatorID>1D2D1015-A30A-E63C-9B26-AEA401182CAF</generatorID>
+<ownerDesignName>Proiect_PBD</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="ACE658B5-00A5-524C-5EF5-41C1CF341CEB"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="29C7A6FC-43EB-1439-D8E7-DB82F8F3EE46" name="detalii_pacienti__IDX">
+<createdBy>ecate</createdBy>
+<createdTime>2022-05-01 12:53:16 UTC</createdTime>
+<ownerDesignName>Proiect_PBD</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>05676A1E-D08E-83D3-7CA4-D354B6CFEDCC</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="662E6272-F6F1-45C9-374C-A35165971176"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="CD13B048-CC07-DC52-D252-E87C49C22757" name="detalii_pacienti_pacienti_FK">
+<createdBy>ecate</createdBy>
+<createdTime>2022-05-01 12:53:16 UTC</createdTime>
+<generatorID>05676A1E-D08E-83D3-7CA4-D354B6CFEDCC</generatorID>
+<ownerDesignName>Proiect_PBD</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="662E6272-F6F1-45C9-374C-A35165971176"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

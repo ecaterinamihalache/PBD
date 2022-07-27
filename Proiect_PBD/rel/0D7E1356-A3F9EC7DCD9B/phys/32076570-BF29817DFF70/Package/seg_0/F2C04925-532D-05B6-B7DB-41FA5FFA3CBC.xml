@@ -1,0 +1,68 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<PackageOracle class="oracle.dbtools.crest.model.design.storage.oracle.PackageOracle" name="Package_show" directorySegmentName="seg_0" id="F2C04925-532D-05B6-B7DB-41FA5FFA3CBC">
+<createdBy>ecate</createdBy>
+<createdTime>2022-06-01 18:40:52 UTC</createdTime>
+<ownerDesignName>Proiect_PBD</ownerDesignName>
+<source>CREATE OR REPLACE PACKAGE Package_show AS 
+    PROCEDURE afisare_pacienti IS
+        CURSOR c1 IS
+        SELECT * FROM pacienti;
+    BEGIN
+        dbms_output.put_line(&apos;Datele din pacienti: &apos;);
+        FOR val IN c1 LOOP
+            dbms_output.put_line(&apos;id_pacient: &apos; || val.id_pacient || &apos;, nume: &apos; || val.nume || &apos;, prenume: &apos; || val.prenume || &apos;, apartinator: &apos; || nvl(val.apartinator, 0) || &apos;.&apos;); 
+        END LOOP;
+    END afisare_pacienti;
+    
+    PROCEDURE afisare_detalii_pacienti IS
+        CURSOR c2 IS
+        SELECT * FROM detalii_pacienti;
+    BEGIN
+        dbms_output.put_line(&apos;Datele din detalii pacienti: &apos;);
+        FOR val IN c2 LOOP
+            dbms_output.put_line(&apos;id_detaliu: &apos; || val.id_detaliu || &apos;, data nasterii: &apos; || val.data_nasterii || &apos;, CNP: &apos; || val.CNP || &apos;, gen: &apos; || val.gen || &apos;, telefon: &apos; || val.telefon || &apos;, email: &apos; || val.email || &apos;, pacienti_id_pacient: &apos; || val.pacienti_id_pacient || &apos;.&apos;); 
+        END LOOP;
+    END afisare_detalii_pacienti;
+    
+    PROCEDURE afisare_analize IS
+        CURSOR c3 IS
+        SELECT * FROM analize;
+    BEGIN
+        dbms_output.put_line(&apos;Datele din analize: &apos;);
+        FOR val IN c3 LOOP
+            dbms_output.put_line(&apos;id_analiza: &apos; || val.id_analiza || &apos;, data recoltarii: &apos; || val.data_recoltarii || &apos;, data rezultatului: &apos; || val.data_rezultatului || &apos;, medici_id_mdic: &apos; || val.medici_id_medic || &apos;, asistente_id_asistenta: &apos; || val.asistente_id_asistenta || &apos;.&apos;); 
+        END LOOP;
+    END afisare_analize;
+    
+    PROCEDURE afisare_detalii_analize IS
+        CURSOR c4 IS
+        SELECT * FROM detalii_analize;
+    BEGIN
+        dbms_output.put_line(&apos;Datele din detalii analize: &apos;);
+        FOR val IN c4 LOOP
+            dbms_output.put_line(&apos;id_detaliu: &apos; || val.id_detaliu || &apos;, nume analiza: &apos; || val.nume_analiza || &apos;, valoarea rezultatului: &apos; || val.valoare_rezultata || &apos;, interval referinta: &apos; || val.interval_referinta || &apos;, analize_id_analiza: &apos; || val.analize_id_analiza || &apos;, valabilitate: &apos; || val.valabilitate || &apos;.&apos;); 
+        END LOOP;
+    END afisare_detalii_analize;
+    
+    PROCEDURE afisare_pacienti_si_detalii IS
+        CURSOR c5 IS
+        SELECT nume, prenume, data_nasterii, CNP, gen, telefon, email FROM pacienti p, detalii_pacienti pd WHERE p.id_pacient=pd.pacienti_id_pacient;
+    BEGIN
+        dbms_output.put_line(&apos;Pacientii cu detaliile lor: &apos;);
+        FOR val IN c5 LOOP
+            
+            dbms_output.put_line(&apos;Pacientul cu numele: &apos; || val.nume || &apos; si prenumele: &apos; || val.prenume || &apos; are urmatoarele date: data nasterii: &apos; || val.data_nasterii || &apos;, CNP: &apos; || val.CNP || &apos;, gen: &apos; || val.gen || &apos;, telefon: &apos; || val.telefon || &apos;, email: &apos; || val.email || &apos;.&apos;); 
+        END LOOP;
+    END afisare_pacienti_si_detalii;
+    
+    PROCEDURE afisare_analize_si_detalii IS
+        CURSOR c6 IS
+        SELECT categorie, data_recoltarii, data_rezultatului, nume_analiza, valoare_rezultata, interval_referinta FROM analize a, detalii_analize ad WHERE a.id_analiza=ad.analize_id_analiza;
+    BEGIN
+        dbms_output.put_line(&apos;Pacientii cu detaliile lor: &apos;);
+        FOR val IN c6 LOOP
+            dbms_output.put_line(&apos;Analiza ce are categoria: &apos; || val.categorie || &apos;, data_recoltarii: &apos; || val.data_recoltarii || &apos; si data_rezultatului: &apos; || val.data_rezultatului || &apos; are urmatoarele detalii: numele analizei: &apos; || val.nume_analiza || &apos;, valoarea rezultata: &apos; || val.valoare_rezultata || &apos; si intervalul de referinta: &apos; || val.interval_referinta || &apos;.&apos;); 
+        END LOOP;
+    END afisare_analize_si_detalii;
+END;</source>
+</PackageOracle>

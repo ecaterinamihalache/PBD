@@ -1,0 +1,92 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<PackageOracle class="oracle.dbtools.crest.model.design.storage.oracle.PackageOracle" name="Package_tranzactie" directorySegmentName="seg_0" id="E166D10E-B2B7-D91C-B450-8A9CDD3D421E">
+<createdBy>ecate</createdBy>
+<createdTime>2022-06-01 18:41:03 UTC</createdTime>
+<ownerDesignName>Proiect_PBD</ownerDesignName>
+<source>CREATE OR REPLACE PACKAGE Package_tranzactie AS 
+    v_pacient_id pacienti.id_pacient%TYPE;
+    v_pacient_nume pacienti.nume%TYPE;
+    v_pacient_prenume pacienti.prenume%TYPE;
+    v_pacienti_id_pacient detalii_pacienti.pacienti_id_pacient%TYPE := NULL;
+    
+    PROCEDURE insert_detalii_pacient
+        (v_data_nasterii IN DATE,
+         v_CNP IN NUMBER,
+         v_gen IN CHAR,
+         v_telefon IN VARCHAR2,
+         v_email IN VARCHAR2,
+         v_pacienti_n IN VARCHAR2,
+         v_pacienti_p IN VARCHAR2) IS
+    BEGIN
+        --fac legatura de fk intre tabela detalii_pacienti si tabela pacienti
+        SELECT id_pacient INTO v_pacient_id FROM pacienti WHERE nume = v_pacienti_n AND prenume = v_pacienti_p;
+        
+        --verific daca mai are cineva numarul de telefon pe care vreau sa introduc pentru pacientul meu si daca da imi pun id-ul sau in variabila v_pacienti_id_pacient
+        SELECT pacienti_id_pacient INTO v_pacienti_id_pacient FROM detalii_pacienti WHERE telefon = v_telefon;
+        
+        --daca imi gaseste un id imi cauta numele si prenumele pacientului ca sa ii fac update la campul apartiantor cu id-ul pacientului inserat acum
+        IF v_pacienti_id_pacient != 0 THEN
+            INSERT INTO Detalii_Pacienti(data_nasterii, CNP, gen, telefon, email, pacienti_id_pacient) 
+            VALUES(v_data_nasterii, v_CNP, v_gen, v_telefon, v_email, v_pacient_id);
+        ELSE
+            SELECT nume, prenume INTO v_pacient_nume, v_pacient_prenume FROM pacienti WHERE id_pacient = v_pacienti_id_pacient;
+            
+            INSERT INTO Detalii_Pacienti(data_nasterii, CNP, gen, telefon, email, pacienti_id_pacient) 
+            VALUES(v_data_nasterii, v_CNP, v_gen, v_telefon, v_email, v_pacient_id);
+            
+            update_package.update_apartinator_pacient(v_pacient_nume,v_pacient_prenume , v_pacienti_n, v_pacienti_p);
+        END IF;   
+    EXCEPTION
+        WHEN NO_DATA_FOUND then
+            v_pacienti_id_pacient := 0;
+            INSERT INTO Detalii_Pacienti(data_nasterii, CNP, gen, telefon, email, pacienti_id_pacient) 
+            VALUES(v_data_nasterii, v_CNP, v_gen, v_telefon, v_email, v_pacient_id);
+    END insert_detalii_pacient;
+    
+    PROCEDURE tranzactie_procedure(
+         v_nume1 IN VARCHAR2,
+         v_prenume1 IN VARCHAR2,
+         v_apartinator1 IN NUMBER,
+         v_data_nasterii1 IN DATE,
+         v_CNP1 IN NUMBER,
+         v_gen1 IN CHAR,
+         v_telefon1 IN VARCHAR2,
+         v_email1 IN VARCHAR2,
+         
+         v_nume2 IN VARCHAR2,
+         v_prenume2 IN VARCHAR2,
+         v_apartinator2 IN NUMBER,
+         v_data_nasterii2 IN DATE,
+         v_CNP2 IN NUMBER,
+         v_gen2 IN CHAR,
+         v_telefon2 IN VARCHAR2,
+         v_email2 IN VARCHAR2) IS
+    BEGIN
+        --COMMIT;
+        SET TRANSACTION NAME &apos;add_pacient_with_same_phone_number&apos;;
+        SAVEPOINT before_insert_first_pacient;
+        
+        insert_package.add_pacient(v_nume1, v_prenume1, v_apartinator1);
+        SAVEPOINT after_insert_first_pacient;
+        
+        insert_detalii_pacient(v_data_nasterii1, v_CNP1, v_gen1, v_telefon1, v_email1, v_nume1, v_prenume1);
+        SAVEPOINT after_insert_details_for_first_pacient;
+          
+        insert_package.add_pacient(v_nume2, v_prenume2, v_apartinator2);
+        SAVEPOINT after_insert_second_pacient;
+        
+        insert_detalii_pacient(v_data_nasterii2, v_CNP2, v_gen2, v_telefon2, v_email2, v_nume2, v_prenume2);
+        SAVEPOINT after_insert_details_for_second_pacient;
+          
+        SAVEPOINT before_update_apartinator;
+        update_package.update_apartinator_pacient(v_nume1, v_prenume1,v_nume2, v_prenume2); 
+        
+        --ROLLBACK TO SAVEPOINT before_insert_first_pacient;
+        --COMMIT;
+    EXCEPTION
+        WHEN OTHERS THEN
+            dbms_output.put_line(&apos;S-au mai produs alte erori! Se face ROLLBACK catre SAVEPOINT-UL before_insert_first_pacient&apos;);
+            ROLLBACK TO SAVEPOINT before_insert_first_pacient;
+    END tranzactie_procedure;
+END;</source>
+</PackageOracle>

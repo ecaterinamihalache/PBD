@@ -1,0 +1,126 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="A9875102-522B-9E14-9C80-1E99EA97CE64" name="detalii_analize">
+<createdBy>ecate</createdBy>
+<createdTime>2022-05-01 12:53:16 UTC</createdTime>
+<generatorID>D921112E-86E2-9C65-8A55-196AB1E7DDBA</generatorID>
+<ownerDesignName>Proiect_PBD</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_detaliu" id="3E2BF83D-53D7-4443-351C-FE8900DD8750">
+<createdBy>ecate</createdBy>
+<createdTime>2022-05-01 12:53:16 UTC</createdTime>
+<generatorID>070E36B9-6F5E-809B-4107-10C29411CA71</generatorID>
+<ownerDesignName>Proiect_PBD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<ownDataTypeParameters>,3,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nume_analiza" id="ADC54B2F-7581-7B32-895D-A37AB6E789A1">
+<createdBy>ecate</createdBy>
+<createdTime>2022-05-01 12:53:16 UTC</createdTime>
+<generatorID>5EAEB752-8FCA-AAB6-AE5C-C79F241FD798</generatorID>
+<ownerDesignName>Proiect_PBD</ownerDesignName>
+<constraintName>nume_analiza_ck</constraintName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<checkConstraint>
+<implementationDef dbType="Generic Constraint" definition="length(nume_analiza)&gt;1"/>
+</checkConstraint>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="valoare_rezultata" id="38E88987-DDD8-7A64-203B-C04217565D02">
+<createdBy>ecate</createdBy>
+<createdTime>2022-05-01 12:53:16 UTC</createdTime>
+<generatorID>D30306B8-5990-5CA8-263A-83410324A9A7</generatorID>
+<ownerDesignName>Proiect_PBD</ownerDesignName>
+<constraintName>valoare_rezultata_ck</constraintName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<checkConstraint>
+<implementationDef dbType="Generic Constraint" definition="valoare_rezultata&gt;0"/>
+</checkConstraint>
+<ownDataTypeParameters>,3,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="interval_referinta" id="7AFEDC8E-A8E1-FE9F-5B41-3811706D2324">
+<createdBy>ecate</createdBy>
+<createdTime>2022-05-01 12:53:16 UTC</createdTime>
+<generatorID>9413225D-42E7-BACD-F152-8EC66D11B3FF</generatorID>
+<ownerDesignName>Proiect_PBD</ownerDesignName>
+<constraintName>interval_ck</constraintName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<checkConstraint>
+<implementationDef dbType="Generic Constraint" definition="length(interval_referinta)&gt;1"/>
+</checkConstraint>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="analize_id_analiza" id="B61C92D2-F2B9-C56C-1957-F833C34CFAF1">
+<createdBy>ecate</createdBy>
+<createdTime>2022-05-01 12:53:16 UTC</createdTime>
+<generatorID>8C0A0FF2-A81A-0E07-8C13-AA6155904C59</generatorID>
+<ownerDesignName>Proiect_PBD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="1ACD33F8-4BFC-7C0A-A713-023A9D8D8CCA" referredColumn="94C5DA67-245B-80E7-366B-BB11AC89E73B"/>
+</associations>
+</Column>
+<Column name="valabilitate" id="35F8B580-A1BB-A012-3AB3-37E5125BDE9B">
+<createdBy>ecate</createdBy>
+<createdTime>2022-05-12 09:22:10 UTC</createdTime>
+<generatorID>0ABBE7C0-1540-B545-6BB9-31B164A55D6D</generatorID>
+<ownerDesignName>Proiect_PBD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>2</dataTypePrecision>
+<ownDataTypeParameters>,2,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="C3D8A0A2-28EC-745E-3D85-6CAFF8825570" name="detalii_analize_PK">
+<createdBy>ecate</createdBy>
+<createdTime>2022-05-01 12:53:16 UTC</createdTime>
+<generatorID>41B0D2ED-6908-F490-49F3-F60D52C44874</generatorID>
+<ownerDesignName>Proiect_PBD</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3E2BF83D-53D7-4443-351C-FE8900DD8750"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="4B18D02B-B6C6-B31C-A282-1E5AE5A5F943" name="detalii_analize_analize_FK">
+<createdBy>ecate</createdBy>
+<createdTime>2022-05-01 12:53:16 UTC</createdTime>
+<generatorID>56E3D90C-7530-8818-07C7-44368E627DA3</generatorID>
+<ownerDesignName>Proiect_PBD</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B61C92D2-F2B9-C56C-1957-F833C34CFAF1"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

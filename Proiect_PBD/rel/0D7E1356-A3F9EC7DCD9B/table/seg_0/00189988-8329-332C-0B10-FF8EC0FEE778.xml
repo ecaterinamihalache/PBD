@@ -1,0 +1,135 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="00189988-8329-332C-0B10-FF8EC0FEE778" name="analize">
+<createdBy>ecate</createdBy>
+<createdTime>2022-05-01 12:53:16 UTC</createdTime>
+<generatorID>2B16CCE1-9FA0-D79B-4F63-1C6209E9A831</generatorID>
+<ownerDesignName>Proiect_PBD</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_analiza" id="94C5DA67-245B-80E7-366B-BB11AC89E73B">
+<createdBy>ecate</createdBy>
+<createdTime>2022-05-01 12:53:16 UTC</createdTime>
+<generatorID>498B7B1D-54E8-50A6-B5DD-1CBB783A43EA</generatorID>
+<ownerDesignName>Proiect_PBD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<ownDataTypeParameters>,3,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="categorie" id="65CD0185-8489-58E4-4EA8-A3BEC13B967E">
+<createdBy>ecate</createdBy>
+<createdTime>2022-05-01 12:53:16 UTC</createdTime>
+<generatorID>F204AAA9-D114-4B0F-62D4-61DDDDD8FE28</generatorID>
+<ownerDesignName>Proiect_PBD</ownerDesignName>
+<constraintName>categorie_ck</constraintName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>40</dataTypeSize>
+<checkConstraint>
+<implementationDef dbType="Generic Constraint" definition="length(categorie)&gt;1"/>
+</checkConstraint>
+<ownDataTypeParameters>40,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="data_recoltarii" id="1BB758A4-6BB1-21BA-AA7D-D032392B46B4">
+<createdBy>ecate</createdBy>
+<createdTime>2022-05-01 12:53:16 UTC</createdTime>
+<generatorID>7668050C-202B-7FED-0178-0E7EB64BF68D</generatorID>
+<ownerDesignName>Proiect_PBD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="data_rezultatului" id="2DFF4BC2-484C-FA07-9CAD-411D8ACBE0D8">
+<createdBy>ecate</createdBy>
+<createdTime>2022-05-01 12:53:16 UTC</createdTime>
+<generatorID>7162633E-4F4F-274F-4E1A-CF1777FEAB7D</generatorID>
+<ownerDesignName>Proiect_PBD</ownerDesignName>
+<constraintName>data_rezultatului</constraintName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<checkConstraint>
+<implementationDef dbType="Generic Constraint" definition="data_rezultatului&gt;=data_recoltarii"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="medici_id_medic" id="C6431CC5-ACED-6638-B58E-ACCC6690E9E7">
+<createdBy>ecate</createdBy>
+<createdTime>2022-05-01 12:53:16 UTC</createdTime>
+<generatorID>A3F148FF-7A8D-638A-3C0D-072B1976BA75</generatorID>
+<ownerDesignName>Proiect_PBD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="99AE1B08-3EB8-5BE5-F0FB-B864E6CB4638" referredColumn="F1C8A1CD-96D0-00E4-3B5E-FBBA06E26123"/>
+</associations>
+</Column>
+<Column name="asistente_id_asistenta" id="0F0B0CA7-9BB0-DEBA-41DC-1698909DDF0E">
+<createdBy>ecate</createdBy>
+<createdTime>2022-05-01 12:53:16 UTC</createdTime>
+<generatorID>4C4E96E7-02E1-9AB6-DA4B-A77B564A2FAC</generatorID>
+<ownerDesignName>Proiect_PBD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F82B0092-6E2A-120A-3CE9-637EE0864292" referredColumn="2F4C5101-8566-C0CC-5726-1F78F53113CD"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="A37FBC54-DD11-334E-0605-5C2F8C654F9D" name="analize_PK">
+<createdBy>ecate</createdBy>
+<createdTime>2022-05-01 12:53:16 UTC</createdTime>
+<generatorID>3FBE7006-86F4-FFE9-A237-B993F2236C9B</generatorID>
+<ownerDesignName>Proiect_PBD</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="94C5DA67-245B-80E7-366B-BB11AC89E73B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="054F09CD-F17F-9BE9-1D60-8E0080B219E9" name="analize_asistente_FK">
+<createdBy>ecate</createdBy>
+<createdTime>2022-05-01 12:53:16 UTC</createdTime>
+<generatorID>D749518F-356A-E4B0-6C84-1A63BD8201F1</generatorID>
+<ownerDesignName>Proiect_PBD</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0F0B0CA7-9BB0-DEBA-41DC-1698909DDF0E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="26EEFECE-FA11-109C-8B1E-DCDB90D31901" name="analize_medici_FK">
+<createdBy>ecate</createdBy>
+<createdTime>2022-05-01 12:53:16 UTC</createdTime>
+<generatorID>3C0531E2-6853-6158-ECB0-129B1CD03B9C</generatorID>
+<ownerDesignName>Proiect_PBD</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C6431CC5-ACED-6638-B58E-ACCC6690E9E7"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

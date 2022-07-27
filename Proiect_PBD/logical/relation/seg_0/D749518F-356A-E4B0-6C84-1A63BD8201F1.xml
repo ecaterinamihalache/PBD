@@ -1,0 +1,21 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="asistente_analize_fk" directorySegmentName="seg_0" id="D749518F-356A-E4B0-6C84-1A63BD8201F1">
+<createdBy>ecate</createdBy>
+<createdTime>2022-05-01 11:14:15 UTC</createdTime>
+<ownerDesignName>Proiect_PBD</ownerDesignName>
+<engineerTo>
+<item key="0D7E1356-8AAB-5162-BE78-A3F9EC7DCD9B" value="true"/>
+</engineerTo>
+<sourcePk>DB05F643-3927-B5D4-2CA7-F2E39E60B9F6</sourcePk>
+<identifying>false</identifying>
+<nameOnSource>recolteaza</nameOnSource>
+<nameOnTarget>sunt recoltate</nameOnTarget>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>BD9AB9B0-C4C5-9776-A885-49CB7A5DCDE3</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>2B16CCE1-9FA0-D79B-4F63-1C6209E9A831</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

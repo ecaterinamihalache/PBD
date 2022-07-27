@@ -1,0 +1,122 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="2B16CCE1-9FA0-D79B-4F63-1C6209E9A831" name="analize">
+<createdBy>ecate</createdBy>
+<createdTime>2022-05-01 10:43:22 UTC</createdTime>
+<ownerDesignName>Proiect_PBD</ownerDesignName>
+<engineerTo>
+<item key="0D7E1356-8AAB-5162-BE78-A3F9EC7DCD9B" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id_analiza" id="498B7B1D-54E8-50A6-B5DD-1CBB783A43EA">
+<createdBy>ecate</createdBy>
+<createdTime>2022-05-01 10:45:05 UTC</createdTime>
+<ownerDesignName>Proiect_PBD</ownerDesignName>
+<engineerTo>
+<item key="0D7E1356-8AAB-5162-BE78-A3F9EC7DCD9B" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<ownDataTypeParameters>,3,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="categorie" id="F204AAA9-D114-4B0F-62D4-61DDDDD8FE28">
+<createdBy>ecate</createdBy>
+<createdTime>2022-05-01 10:45:43 UTC</createdTime>
+<ownerDesignName>Proiect_PBD</ownerDesignName>
+<engineerTo>
+<item key="0D7E1356-8AAB-5162-BE78-A3F9EC7DCD9B" value="true"/>
+</engineerTo>
+<constraintName>categorie_ck</constraintName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>40</dataTypeSize>
+<checkConstraint>
+<implementationDef dbType="Generic Constraint" definition="length(categorie)&gt;1"/>
+</checkConstraint>
+<ownDataTypeParameters>40,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="data_recoltarii" id="7668050C-202B-7FED-0178-0E7EB64BF68D">
+<createdBy>ecate</createdBy>
+<createdTime>2022-05-01 10:47:06 UTC</createdTime>
+<ownerDesignName>Proiect_PBD</ownerDesignName>
+<engineerTo>
+<item key="0D7E1356-8AAB-5162-BE78-A3F9EC7DCD9B" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="data_rezultatului" id="7162633E-4F4F-274F-4E1A-CF1777FEAB7D">
+<createdBy>ecate</createdBy>
+<createdTime>2022-05-01 10:47:38 UTC</createdTime>
+<ownerDesignName>Proiect_PBD</ownerDesignName>
+<engineerTo>
+<item key="0D7E1356-8AAB-5162-BE78-A3F9EC7DCD9B" value="true"/>
+</engineerTo>
+<constraintName>data_rezultatului</constraintName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<checkConstraint>
+<implementationDef dbType="Generic Constraint" definition="data_rezultatului&gt;=data_recoltarii"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_medic" id="A3F148FF-7A8D-638A-3C0D-072B1976BA75">
+<createdBy>ecate</createdBy>
+<createdTime>2022-05-01 11:13:38 UTC</createdTime>
+<generatorID>3C0531E2-6853-6158-ECB0-129B1CD03B9C</generatorID>
+<ownerDesignName>Proiect_PBD</ownerDesignName>
+<engineerTo>
+<item key="0D7E1356-8AAB-5162-BE78-A3F9EC7DCD9B" value="true"/>
+</engineerTo>
+<referedAttribute>C9F02ABD-7F45-0B8F-CBC7-D46718FE9A56</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<ownDataTypeParameters>,3,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_asistenta" id="4C4E96E7-02E1-9AB6-DA4B-A77B564A2FAC">
+<createdBy>ecate</createdBy>
+<createdTime>2022-05-01 11:14:15 UTC</createdTime>
+<generatorID>D749518F-356A-E4B0-6C84-1A63BD8201F1</generatorID>
+<ownerDesignName>Proiect_PBD</ownerDesignName>
+<engineerTo>
+<item key="0D7E1356-8AAB-5162-BE78-A3F9EC7DCD9B" value="true"/>
+</engineerTo>
+<referedAttribute>948F5157-C4A8-D4AB-70FD-C048FCD7D89E</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<ownDataTypeParameters>,3,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="3FBE7006-86F4-FFE9-A237-B993F2236C9B" name="analize PK">
+<createdBy>ecate</createdBy>
+<createdTime>2022-05-01 10:45:41 UTC</createdTime>
+<ownerDesignName>Proiect_PBD</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="0D7E1356-8AAB-5162-BE78-A3F9EC7DCD9B" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>498B7B1D-54E8-50A6-B5DD-1CBB783A43EA</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

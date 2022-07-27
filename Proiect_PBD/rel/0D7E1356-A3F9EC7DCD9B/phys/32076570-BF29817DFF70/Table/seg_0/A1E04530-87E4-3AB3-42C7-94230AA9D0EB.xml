@@ -1,0 +1,41 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="pacienti" directorySegmentName="seg_0" id="A1E04530-87E4-3AB3-42C7-94230AA9D0EB">
+<createdBy>ecate</createdBy>
+<createdTime>2022-06-01 18:22:00 UTC</createdTime>
+<ownerDesignName>Proiect_PBD</ownerDesignName>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="prenume" id="8162756A-BA13-BF2C-A9DF-BE224B795C0E">
+<createdBy>ecate</createdBy>
+<createdTime>2022-06-01 18:22:00 UTC</createdTime>
+<ownerDesignName>Proiect_PBD</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="id_pacient" id="87B994B6-7D49-80C4-DE2F-5B54970B1A70">
+<createdBy>ecate</createdBy>
+<createdTime>2022-06-01 18:22:00 UTC</createdTime>
+<ownerDesignName>Proiect_PBD</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="nume" id="D851C03C-49A8-F63A-D5CE-A8DC88B08729">
+<createdBy>ecate</createdBy>
+<createdTime>2022-06-01 18:22:00 UTC</createdTime>
+<ownerDesignName>Proiect_PBD</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="apartinator" id="FEBDD33F-3D67-4E54-8BCF-F47BCA64CA19">
+<createdBy>ecate</createdBy>
+<createdTime>2022-06-01 18:22:00 UTC</createdTime>
+<ownerDesignName>Proiect_PBD</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="pacienti_PK" id="2C55C8D4-48E2-37B6-F93D-FE1851DD7D44">
+<createdBy>ecate</createdBy>
+<createdTime>2022-06-01 18:22:00 UTC</createdTime>
+<ownerDesignName>Proiect_PBD</ownerDesignName>
+<indexSort>SORTED</indexSort>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev11g>

@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="F82B0092-6E2A-120A-3CE9-637EE0864292" containerWithKeyObject="00189988-8329-332C-0B10-FF8EC0FEE778" localFKIndex="054F09CD-F17F-9BE9-1D60-8E0080B219E9" name="analize_asistente_FK">
+<createdBy>ecate</createdBy>
+<createdTime>2022-05-01 12:53:16 UTC</createdTime>
+<generatorID>D749518F-356A-E4B0-6C84-1A63BD8201F1</generatorID>
+<ownerDesignName>Proiect_PBD</ownerDesignName>
+<referredTableLongName>asistente</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>FEF80485-B9E6-E691-B34F-3CC9377EC51A</referredTableID>
+<keyObject>D3248C9F-8BD6-D181-B2F5-F4AF7BB07615</keyObject>
+<referredKeyID>D3248C9F-8BD6-D181-B2F5-F4AF7BB07615</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>id_asistenta</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

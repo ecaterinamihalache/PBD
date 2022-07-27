@@ -1,0 +1,21 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="analize_detalii_fk" directorySegmentName="seg_0" id="56E3D90C-7530-8818-07C7-44368E627DA3">
+<createdBy>ecate</createdBy>
+<createdTime>2022-05-01 12:20:45 UTC</createdTime>
+<ownerDesignName>Proiect_PBD</ownerDesignName>
+<engineerTo>
+<item key="0D7E1356-8AAB-5162-BE78-A3F9EC7DCD9B" value="true"/>
+</engineerTo>
+<sourcePk>3FBE7006-86F4-FFE9-A237-B993F2236C9B</sourcePk>
+<identifying>false</identifying>
+<nameOnSource>are</nameOnSource>
+<nameOnTarget>sunt ale</nameOnTarget>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>2B16CCE1-9FA0-D79B-4F63-1C6209E9A831</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>D921112E-86E2-9C65-8A55-196AB1E7DDBA</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

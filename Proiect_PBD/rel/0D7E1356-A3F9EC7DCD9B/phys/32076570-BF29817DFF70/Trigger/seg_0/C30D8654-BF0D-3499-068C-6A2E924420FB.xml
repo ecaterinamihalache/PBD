@@ -1,0 +1,34 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TriggerOraclev10g class="oracle.dbtools.crest.model.design.storage.oracle.v10g.TriggerOraclev10g" name="Trg_before_insert_Analiza_with_details" directorySegmentName="seg_0" id="C30D8654-BF0D-3499-068C-6A2E924420FB">
+<createdBy>ecate</createdBy>
+<createdTime>2022-06-01 18:27:01 UTC</createdTime>
+<ownerDesignName>Proiect_PBD</ownerDesignName>
+<actions>INSERT</actions>
+<body><![CDATA[DECLARE 
+    v_nume_analiza_nou detalii_analize.nume_analiza%TYPE := :new.nume_analiza;
+    v_analize_id_analiza_nou detalii_analize.analize_id_analiza%TYPE := :new.analize_id_analiza;
+    v_data_recoltare_noua analize.data_recoltarii%TYPE;
+    
+    v_valabilitate detalii_analize.valabilitate%TYPE;
+    v_data_recoltarii analize.data_recoltarii%TYPE;
+   
+    CURSOR c1 IS
+    SELECT analize_id_analiza, valabilitate FROM detalii_analize WHERE nume_analiza = v_nume_analiza_nou;
+BEGIN
+    SELECT data_recoltarii INTO v_data_recoltare_noua FROM analize WHERE id_analiza=v_analize_id_analiza_nou; --data recoltarii noi
+    dbms_output.put_line(v_data_recoltare_noua);
+    
+    FOR val IN c1 LOOP
+        v_valabilitate := val.valabilitate;
+        dbms_output.put_line(val.analize_id_analiza || ' si ' || val.valabilitate);
+        SELECT data_recoltarii INTO v_data_recoltarii FROM analize WHERE id_analiza = val.analize_id_analiza; --data recoltarii vechi
+        dbms_output.put_line(v_data_recoltarii);
+        
+        IF v_data_recoltare_noua - v_data_recoltarii < v_valabilitate THEN
+            RAISE_APPLICATION_ERROR(-20508,'Termenul de valabilitate nerespectat! Analiza se face prea devreme!');
+        END IF;
+    END LOOP;
+END]]></body>
+<triggerTime>BEFORE</triggerTime>
+<table>A9875102-522B-9E14-9C80-1E99EA97CE64</table>
+</TriggerOraclev10g>

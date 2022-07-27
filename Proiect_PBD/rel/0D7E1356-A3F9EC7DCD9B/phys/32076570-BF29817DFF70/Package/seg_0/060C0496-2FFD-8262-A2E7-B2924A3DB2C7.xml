@@ -1,0 +1,181 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<PackageOracle class="oracle.dbtools.crest.model.design.storage.oracle.PackageOracle" name="Package_insert" directorySegmentName="seg_0" id="060C0496-2FFD-8262-A2E7-B2924A3DB2C7">
+<createdBy>ecate</createdBy>
+<createdTime>2022-06-01 18:38:56 UTC</createdTime>
+<ownerDesignName>Proiect_PBD</ownerDesignName>
+<source>CREATE OR REPLACE PACKAGE Package_insert AS 
+    v_medic_id medici.id_medic%TYPE;
+    v_asistenta_id asistente.id_asistenta%TYPE;
+    v_pacient_id pacienti.id_pacient%TYPE;
+    v_analize_id analize.id_analiza%TYPE;
+    
+    PROCEDURE add_medic
+        (v_nume	IN	VARCHAR2,
+         v_prenume	IN	VARCHAR2,
+         v_cod_parafa IN VARCHAR2) IS
+    BEGIN
+      INSERT INTO medici (nume, prenume, cod_parafa)
+      VALUES (v_nume, v_prenume, v_cod_parafa);
+    END add_medic;
+    
+    PROCEDURE add_asistenta
+        (v_nume	IN	VARCHAR2,
+         v_prenume	IN	VARCHAR2) IS
+    BEGIN
+      INSERT INTO asistente (nume, prenume)
+      VALUES (v_nume, v_prenume);
+    END add_asistenta;
+    
+    PROCEDURE add_pacient
+        (v_nume	IN	VARCHAR2,
+         v_prenume	IN	VARCHAR2,
+         v_apartinator IN NUMBER) 
+    IS
+         e_pacient_nume EXCEPTION; 
+         e_pacient_prenume EXCEPTION; 
+         pragma exception_init(e_pacient_nume, -20005);
+         pragma exception_init(e_pacient_prenume, -20006);
+    BEGIN
+        IF v_nume IS NULL OR length(v_nume) &lt;= 1 or length(v_nume) &gt; 30 THEN
+            RAISE e_pacient_nume;
+        END IF;
+        
+        IF v_prenume IS NULL OR length(v_prenume) &lt;= 1 or length(v_prenume) &gt; 30 THEN
+            RAISE e_pacient_prenume;
+        END IF;
+        
+        INSERT INTO pacienti (nume, prenume, apartinator)
+        VALUES (v_nume, v_prenume, v_apartinator);
+    EXCEPTION
+        WHEN e_pacient_nume THEN
+            dbms_output.put_line(&apos;Nu s-a respectat constrangerea bazei de date! Campul nume trebuie sa fie diferit de null, cu dimensiunea mai mare decat 1 si mai mica decat 20!!&apos;); 
+        WHEN e_pacient_prenume THEN
+            dbms_output.put_line(&apos;Nu s-a respectat constrangerea bazei de date! Campul prenume trebuie sa fie diferit de null, cu dimensiunea mai mare decat 1 si mai mica decat 20!!&apos;); 
+        WHEN OTHERS THEN
+            dbms_output.put_line(&apos;S-au mai produs alte erori la inserarea unui pacient.&apos;);
+    END add_pacient;
+    
+    PROCEDURE add_detalii_pacient
+        (v_data_nasterii IN DATE,
+         v_CNP IN NUMBER,
+         v_gen IN CHAR,
+         v_telefon IN VARCHAR2,
+         v_email IN VARCHAR2,
+         v_pacienti_n IN VARCHAR2,
+         v_pacienti_p IN VARCHAR2) 
+    IS
+         e_data_nasterii EXCEPTION; 
+         e_CNP EXCEPTION; 
+         e_gen EXCEPTION; 
+         pragma exception_init(e_data_nasterii, -20007);
+         pragma exception_init(e_CNP, -20008);
+         pragma exception_init(e_gen, -20009);
+    BEGIN
+        IF v_data_nasterii IS NULL THEN
+            RAISE e_data_nasterii;
+        END IF;
+        
+        IF v_CNP IS NULL THEN
+            RAISE e_CNP;
+        END IF;
+        
+        IF v_gen IS NULL THEN
+            RAISE e_gen;
+        END IF;
+        
+        SELECT id_pacient INTO v_pacient_id FROM pacienti WHERE nume = v_pacienti_n AND prenume = v_pacienti_p;
+        
+        INSERT INTO Detalii_Pacienti(data_nasterii, CNP, gen, telefon, email, pacienti_id_pacient) 
+        VALUES(v_data_nasterii, v_CNP, v_gen, v_telefon, v_email, v_pacient_id);
+    EXCEPTION
+        WHEN e_data_nasterii THEN
+            dbms_output.put_line(&apos;Nu s-a respectat constrangerea bazei de date! Campul data nasterii trebuie sa fie diferit de null!&apos;); 
+        WHEN e_CNP THEN
+            dbms_output.put_line(&apos;Nu s-a respectat constrangerea bazei de date! Campul CNP trebuie sa fie diferit de null!&apos;); 
+        WHEN e_gen THEN
+            dbms_output.put_line(&apos;Nu s-a respectat constrangerea bazei de date! Campul gen trebuie sa fie diferit de null!&apos;); 
+        WHEN OTHERS THEN
+            dbms_output.put_line(&apos;S-au mai produs alte erori la inserarea unui detaliu pentru pacient.&apos;);
+    END add_detalii_pacient;
+    
+    PROCEDURE add_analiza
+        (v_categorie IN	VARCHAR2,
+         v_data_recoltarii	IN	DATE,
+         v_data_rezultatului IN	DATE,
+         v_medic_n IN VARCHAR2,
+         v_asistenta_n IN VARCHAR2)
+    IS
+         e_add_analiza_date EXCEPTION; 
+         e_add_analiza_categorie EXCEPTION; 
+         pragma exception_init(e_add_analiza_date, -20000);
+         pragma exception_init(e_add_analiza_categorie, -20001);
+         v_flag BOOLEAN;
+    BEGIN
+        SELECT id_medic INTO v_medic_id FROM medici WHERE nume = v_medic_n;
+        SELECT id_asistenta INTO v_asistenta_id FROM asistente WHERE nume = v_asistenta_n;
+       
+        IF v_categorie IS NULL THEN
+            RAISE e_add_analiza_categorie;
+        END IF;
+        
+        v_flag := validare_date(v_data_recoltarii, v_data_rezultatului);
+        IF  v_flag = TRUE THEN
+            RAISE e_add_analiza_date;
+        ELSE
+            INSERT INTO analize (categorie, data_recoltarii, data_rezultatului, medici_id_medic, asistente_id_asistenta)
+            VALUES (v_categorie, v_data_recoltarii, v_data_rezultatului, v_medic_id, v_asistenta_id);
+        END IF;
+    EXCEPTION
+        WHEN e_add_analiza_date THEN
+            dbms_output.put_line(&apos;Datele introduse sunt incorecte! Data rezultatului trebuie sa fie mai mare sau egala cu data recolatrii!&apos;); 
+        WHEN e_add_analiza_categorie THEN
+            dbms_output.put_line(&apos;Nu s-a respectat constrangerea bazei de date! Campul categorie trebuie sa fie diferit de null!&apos;); 
+        WHEN OTHERS THEN
+            dbms_output.put_line(&apos;S-au mai produs alte erori la inserarea unei analize.&apos;);
+    END add_analiza;
+    
+    PROCEDURE add_detalii_analiza	
+        (v_nume_analiza IN	VARCHAR2,
+         v_valoare_rezultata	IN	NUMBER,
+         v_interval_referinta IN VARCHAR2,
+         v_analize_categorie IN VARCHAR2, 
+         v_valabilitate IN NUMBER, 
+         v_data_recoltarii IN DATE,
+         v_data_rezultatului IN DATE) 
+    IS
+         e_add_detaliu_analiza_nume EXCEPTION; 
+         e_add_detaliu_analiza_val_rez EXCEPTION; 
+         e_add_detaliu_analiza_interval EXCEPTION; 
+         
+         pragma exception_init(e_add_detaliu_analiza_nume, -20002);
+         pragma exception_init(e_add_detaliu_analiza_val_rez, -20003);
+         pragma exception_init(e_add_detaliu_analiza_interval, -20004);
+    BEGIN
+    
+        IF v_nume_analiza IS NULL OR length(v_nume_analiza) &lt;= 1 OR length(v_nume_analiza) &gt; 30 THEN
+            RAISE e_add_detaliu_analiza_nume;
+        END IF;
+        IF v_valoare_rezultata IS NULL OR v_valoare_rezultata &lt;= 0 OR v_valoare_rezultata &gt; 999 THEN
+            RAISE e_add_detaliu_analiza_val_rez;
+        END IF;
+        IF v_interval_referinta IS NULL OR length(v_interval_referinta) &lt;= 1 OR length(v_interval_referinta) &gt; 30 THEN
+            RAISE e_add_detaliu_analiza_interval;
+        END IF;
+        
+        SELECT id_analiza INTO v_analize_id FROM analize WHERE categorie = v_analize_categorie AND data_recoltarii = v_data_recoltarii AND data_rezultatului=v_data_rezultatului;
+
+        INSERT INTO Detalii_Analize (nume_analiza, valoare_rezultata, interval_referinta, analize_id_analiza, valabilitate)
+        VALUES (v_nume_analiza, v_valoare_rezultata, v_interval_referinta, v_analize_id, v_valabilitate);
+        
+     EXCEPTION
+        WHEN e_add_detaliu_analiza_nume THEN
+            dbms_output.put_line(&apos;Nu s-a respectat constrangerea bazei de date! Campul nume analiza trebuie sa fie diferit de null, cu dimensiunea mai mare decat 1 si mai mica decat 30 de caractere!&apos;); 
+        WHEN e_add_detaliu_analiza_val_rez THEN
+            dbms_output.put_line(&apos;Nu s-a respectat constrangerea bazei de date! Campul valoare rezultata trebuie sa fie diferit de null, mai mare decat 0 si mai mic decat 999!&apos;); 
+        WHEN e_add_detaliu_analiza_interval THEN
+            dbms_output.put_line(&apos;Nu s-a respectat constrangerea bazei de date! Campul interval referinta trebuie sa fie diferit de null, cu dimensiunea mai mare decat 1 si mai mica decat 30 de caractere!&apos;); 
+        WHEN OTHERS THEN
+            dbms_output.put_line(&apos;S-au mai produs alte erori la inserarea unui detaliu pentru analize.&apos;);
+    END add_detalii_analiza;   
+END;</source>
+</PackageOracle>

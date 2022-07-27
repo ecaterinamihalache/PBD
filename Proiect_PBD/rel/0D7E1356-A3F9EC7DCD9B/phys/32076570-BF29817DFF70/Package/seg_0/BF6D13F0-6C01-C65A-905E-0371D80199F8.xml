@@ -1,0 +1,74 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<PackageOracle class="oracle.dbtools.crest.model.design.storage.oracle.PackageOracle" name="Package_delete" directorySegmentName="seg_0" id="BF6D13F0-6C01-C65A-905E-0371D80199F8">
+<createdBy>ecate</createdBy>
+<createdTime>2022-06-01 18:40:44 UTC</createdTime>
+<ownerDesignName>Proiect_PBD</ownerDesignName>
+<source>CREATE OR REPLACE PACKAGE Package_delete AS 
+    v_id_pacient pacienti.id_pacient%TYPE;
+    v_id_analiza analize.id_analiza%TYPE;
+    
+    PROCEDURE delete_detalii_pacient
+        (v_id_pacient IN NUMBER) IS
+    BEGIN
+        DELETE FROM detalii_pacienti WHERE pacienti_id_pacient=v_id_pacient;
+    END delete_detalii_pacient;
+    
+    
+    PROCEDURE delete_pacient
+        (v_nume	IN	VARCHAR2,
+         v_prenume	IN	VARCHAR2) IS
+    BEGIN
+        SELECT id_pacient INTO v_id_pacient FROM pacienti WHERE nume=v_nume AND prenume=v_prenume;
+        delete_detalii_pacient(v_id_pacient);
+        delete_pacienti_analize_fk1(v_id_pacient);
+        
+        DELETE FROM pacienti WHERE nume=v_nume AND prenume=v_prenume;
+    END delete_pacient;
+    
+    PROCEDURE delete_pacienti_analize_fk1
+        (v_id_pacient	IN	NUMBER) IS
+     BEGIN
+        DELETE FROM pacienti_analize_fk WHERE pacienti_id_pacient = v_id_pacient;
+    END delete_pacienti_analize_fk1;
+    
+    
+    PROCEDURE delete_detalii_analiza
+        (v_id_analiza	IN	NUMBER) IS
+    BEGIN
+        DELETE FROM detalii_analize WHERE analize_id_analiza = v_id_analiza;
+    END delete_detalii_analiza;
+
+
+    PROCEDURE delete_pacienti_analize_fk2
+        (v_id_analiza	IN	NUMBER) IS
+    BEGIN
+        DELETE FROM pacienti_analize_fk WHERE analize_id_analiza = v_id_analiza;
+    END delete_pacienti_analize_fk2;
+    
+    
+    PROCEDURE delete_analiza
+        (v_categorie IN	VARCHAR2) IS
+    BEGIN
+        SELECT id_analiza INTO v_id_analiza FROM analize WHERE categorie=v_categorie;--imi da id-ul categoriei de sters din detalii_analize
+        --dbms_output.put_line(&apos;aici: &apos; || v_id_analiza);
+        delete_detalii_analiza(v_id_analiza);--vreau sa sterg toate care au id-ul ala
+        delete_pacienti_analize_fk2(v_id_analiza);
+        
+        DELETE FROM analize WHERE categorie=v_categorie;
+    END delete_analiza; 
+    
+    PROCEDURE delete_pacient_cu_analizele_sale
+        (v_nume IN	VARCHAR2,
+        v_prenume IN	VARCHAR2) IS
+    BEGIN
+         SELECT id_pacient INTO v_id_pacient FROM pacienti WHERE nume=v_nume AND prenume=v_prenume;
+         SELECT id_analiza INTO v_id_analiza FROM pacienti p, analize a, pacienti_analize_fk pa WHERE p.id_pacient=pa.pacienti_id_pacient AND pa.analize_id_analiza=a.id_analiza AND p.id_pacient=v_id_pacient;
+        
+        delete_pacient(v_nume, v_prenume);
+        delete_detalii_analiza(v_id_analiza);
+        delete_pacienti_analize_fk2(v_id_analiza);
+        
+        DELETE FROM analize WHERE id_analiza=v_id_analiza;
+    END delete_pacient_cu_analizele_sale;
+END;</source>
+</PackageOracle>

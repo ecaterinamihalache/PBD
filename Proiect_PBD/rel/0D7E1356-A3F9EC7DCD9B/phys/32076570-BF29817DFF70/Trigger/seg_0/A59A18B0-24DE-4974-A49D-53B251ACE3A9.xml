@@ -1,0 +1,24 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TriggerOraclev10g class="oracle.dbtools.crest.model.design.storage.oracle.v10g.TriggerOraclev10g" name="Trg_before_delete_pacient" directorySegmentName="seg_0" id="A59A18B0-24DE-4974-A49D-53B251ACE3A9">
+<createdBy>ecate</createdBy>
+<createdTime>2022-06-01 18:28:06 UTC</createdTime>
+<ownerDesignName>Proiect_PBD</ownerDesignName>
+<actions>DELETE</actions>
+<body><![CDATA[DECLARE 
+    v_id_pacient pacienti.id_pacient%TYPE;
+    CURSOR c1 IS 
+    SELECT * FROM pacienti;
+BEGIN
+    IF DELETING THEN
+        FOR val IN c1 LOOP
+            v_id_pacient := val.id_pacient;
+        END LOOP;
+        --dbms_output.put_line(v_id_pacient);
+    END IF;
+    UPDATE pacienti SET apartinator=NULL
+    WHERE apartinator=v_id_pacient;
+END]]></body>
+<triggerTime>BEFORE</triggerTime>
+<scope>FOR EACH STATEMENT</scope>
+<table>A1E04530-87E4-3AB3-42C7-94230AA9D0EB</table>
+</TriggerOraclev10g>

@@ -1,0 +1,63 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="analize" directorySegmentName="seg_0" id="00189988-8329-332C-0B10-FF8EC0FEE778">
+<createdBy>ecate</createdBy>
+<createdTime>2022-06-01 18:22:00 UTC</createdTime>
+<ownerDesignName>Proiect_PBD</ownerDesignName>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="asistente_id_asistenta" id="0F0B0CA7-9BB0-DEBA-41DC-1698909DDF0E">
+<createdBy>ecate</createdBy>
+<createdTime>2022-06-01 18:22:00 UTC</createdTime>
+<ownerDesignName>Proiect_PBD</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="data_recoltarii" id="1BB758A4-6BB1-21BA-AA7D-D032392B46B4">
+<createdBy>ecate</createdBy>
+<createdTime>2022-06-01 18:22:00 UTC</createdTime>
+<ownerDesignName>Proiect_PBD</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="data_rezultatului" id="2DFF4BC2-484C-FA07-9CAD-411D8ACBE0D8">
+<createdBy>ecate</createdBy>
+<createdTime>2022-06-01 18:22:00 UTC</createdTime>
+<ownerDesignName>Proiect_PBD</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="categorie" id="65CD0185-8489-58E4-4EA8-A3BEC13B967E">
+<createdBy>ecate</createdBy>
+<createdTime>2022-06-01 18:22:00 UTC</createdTime>
+<ownerDesignName>Proiect_PBD</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="id_analiza" id="94C5DA67-245B-80E7-366B-BB11AC89E73B">
+<createdBy>ecate</createdBy>
+<createdTime>2022-06-01 18:22:00 UTC</createdTime>
+<ownerDesignName>Proiect_PBD</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="medici_id_medic" id="C6431CC5-ACED-6638-B58E-ACCC6690E9E7">
+<createdBy>ecate</createdBy>
+<createdTime>2022-06-01 18:22:00 UTC</createdTime>
+<ownerDesignName>Proiect_PBD</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="analize_asistente_FK" id="054F09CD-F17F-9BE9-1D60-8E0080B219E9">
+<createdBy>ecate</createdBy>
+<createdTime>2022-06-01 18:22:00 UTC</createdTime>
+<ownerDesignName>Proiect_PBD</ownerDesignName>
+</ForeignKey>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="analize_medici_FK" id="26EEFECE-FA11-109C-8B1E-DCDB90D31901">
+<createdBy>ecate</createdBy>
+<createdTime>2022-06-01 18:22:00 UTC</createdTime>
+<ownerDesignName>Proiect_PBD</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="analize_PK" id="A37FBC54-DD11-334E-0605-5C2F8C654F9D">
+<createdBy>ecate</createdBy>
+<createdTime>2022-06-01 18:22:00 UTC</createdTime>
+<ownerDesignName>Proiect_PBD</ownerDesignName>
+<indexSort>SORTED</indexSort>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev11g>

@@ -1,0 +1,43 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="pacienti_analize_fk" directorySegmentName="seg_0" id="63C6BD78-09EF-EEC3-A58D-2F74A206BAC6">
+<createdBy>ecate</createdBy>
+<createdTime>2022-06-01 18:22:00 UTC</createdTime>
+<ownerDesignName>Proiect_PBD</ownerDesignName>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="pacienti_id_pacient" id="6416EC2F-00BF-5FB9-3069-371E6476FA1D">
+<createdBy>ecate</createdBy>
+<createdTime>2022-06-01 18:22:00 UTC</createdTime>
+<ownerDesignName>Proiect_PBD</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="analize_id_analiza" id="E339B4E2-8531-3BC4-4FD5-B7496754C23C">
+<createdBy>ecate</createdBy>
+<createdTime>2022-06-01 18:22:00 UTC</createdTime>
+<ownerDesignName>Proiect_PBD</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="pacienti_analize_fk_pacienti" id="3DF3D731-A247-D213-53AA-1E9976A8FC76">
+<createdBy>ecate</createdBy>
+<createdTime>2022-06-01 18:22:00 UTC</createdTime>
+<ownerDesignName>Proiect_PBD</ownerDesignName>
+</ForeignKey>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="pacienti_analize_fk_analize" id="CEB25A34-D6C9-643E-EAC0-BCC3A6F1DB0F">
+<createdBy>ecate</createdBy>
+<createdTime>2022-06-01 18:22:00 UTC</createdTime>
+<ownerDesignName>Proiect_PBD</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="pacienti_analize_fk_PK" id="3854584B-0DB4-910C-90C2-BF897AD60F10">
+<createdBy>ecate</createdBy>
+<createdTime>2022-06-01 18:22:00 UTC</createdTime>
+<ownerDesignName>Proiect_PBD</ownerDesignName>
+<indexSort>SORTED</indexSort>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev11g>

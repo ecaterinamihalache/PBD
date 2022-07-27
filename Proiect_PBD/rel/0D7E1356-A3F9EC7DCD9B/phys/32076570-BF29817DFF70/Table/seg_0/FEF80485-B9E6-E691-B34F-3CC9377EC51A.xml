@@ -1,0 +1,36 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="asistente" directorySegmentName="seg_0" id="FEF80485-B9E6-E691-B34F-3CC9377EC51A">
+<createdBy>ecate</createdBy>
+<createdTime>2022-06-01 18:22:00 UTC</createdTime>
+<ownerDesignName>Proiect_PBD</ownerDesignName>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="id_asistenta" id="2F4C5101-8566-C0CC-5726-1F78F53113CD">
+<createdBy>ecate</createdBy>
+<createdTime>2022-06-01 18:22:00 UTC</createdTime>
+<ownerDesignName>Proiect_PBD</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="nume" id="6AEA5237-5773-0446-D82E-32EC5A8B0C2E">
+<createdBy>ecate</createdBy>
+<createdTime>2022-06-01 18:22:00 UTC</createdTime>
+<ownerDesignName>Proiect_PBD</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="prenume" id="EC7D8438-D13D-5637-2C40-E7F7F599518D">
+<createdBy>ecate</createdBy>
+<createdTime>2022-06-01 18:22:00 UTC</createdTime>
+<ownerDesignName>Proiect_PBD</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="asistente_PK" id="D3248C9F-8BD6-D181-B2F5-F4AF7BB07615">
+<createdBy>ecate</createdBy>
+<createdTime>2022-06-01 18:22:00 UTC</createdTime>
+<ownerDesignName>Proiect_PBD</ownerDesignName>
+<indexSort>SORTED</indexSort>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev11g>
